@@ -23,7 +23,7 @@ const AnimalsGrid = ({
               className={`animal-image ${
                 selectedAnimal === animal.name ? "selected" : ""
               }`}
-              src={`./fig/${animal.img}`}
+              src={`./images/${animal.img}`}
               alt={animal.name}
             />
           </div>

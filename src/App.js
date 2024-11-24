@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "../assets/css/styles.css";
+import "../src/assets/css/styles.css";
 import Animal from "./components/Animal";
 import AnimalsGrid from "./components/AnimalsGrid";
 import Result from "./components/Result";
@@ -19,10 +19,11 @@ function App() {
     if (selectedAnimal === randomAnimal) {
       setResult("win");
 
+      const TIMEOUT_DELAY = 1000;
       setTimeout(() => {
         setResult("");
         setRandomAnimal(selectRandomAnimal());
-      }, 500);
+      }, TIMEOUT_DELAY);
     } else {
       setResult("lose");
     }
@@ -40,6 +41,13 @@ function App() {
           animals={animals}
           randomAnimal={randomAnimal}
           setRandomAnimal={setRandomAnimal}
+        />
+
+        <AnimalsGrid
+          animals={animals}
+          checkResult={checkResult}
+          selectedAnimal={selectedAnimal}
+          setSelectedAnimal={setSelectedAnimal}
         />
       </div>
     </div>
